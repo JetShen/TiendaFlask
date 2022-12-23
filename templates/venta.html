@@ -1,0 +1,71 @@
+<form action="/add_venta" method="POST">
+        <select name="user_id">
+            {% for user in users %}
+            <option value="{{user.rut}}">{{user.nombre}}</option>
+            {% endfor %}
+        </select>
+        <select name="p_id">
+            {% for producto in products %}
+            <option value="{{producto.id}}">{{producto.nombre}}</option>
+            {% endfor %}
+        </select>
+    <input type="text" name="cantidad" placeholder="Ingresar Cantidad">
+    <button>Save</button>
+</form>
+
+<div>
+    <a href="{{ url_for('contacts.index') }}">Volver Atras</a>
+</div>
+
+<style>
+    select{
+        margin: 10px;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    form input {
+        margin: 10px;
+    }
+
+    form button {
+        margin: 10px;
+    }
+
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    div a {
+        margin: 10px;
+    }
+    button{
+        background-color: #f5f5f5;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+    button:hover{
+        background-color: black;
+        color: #f5f5f5;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        margin: 10px;
+    }
+    a:hover{
+        color: #f5f5f5;
+        background-color: black;
+        border-radius: 10px;
+    }
+</style>
+
+

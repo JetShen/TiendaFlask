@@ -1,0 +1,58 @@
+<nav>
+    <a href="{{ url_for('contacts.añadir_producto') }}">Añadir Producto</a>
+    <a href="{{ url_for('contacts.index') }}">Inicio</a>
+</nav>
+<div>
+    {% for product in products %}
+    <div>
+        <nav>
+            <a href="{{ url_for('contacts.delete_product', id=product.id) }}">Delete</a>
+            <a href="{{ url_for('contacts.update_product', id=product.id) }}">Update</a>
+        </nav>
+        <h5>Nombre: {{product.nombre}}</h5>
+        <p>Id: {{product.id}}</p>
+        <p>Descripcion: {{product.descripcion}}</p>
+        <p>Precio: {{product.precio}}</p>
+        <p>Stock: {{product.stock}}</p>
+    </div>
+    {% endfor %}
+</div>
+<style>
+    * {
+        margin: 8px;
+        padding: 0px;
+    }
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    div div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 1px solid black;
+        width: 300px;
+        margin: 10px;
+    }
+    div div a {
+        margin: 1px;
+    }
+    nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    a{
+        text-decoration: none;
+        color: black;
+        font-size: 20px;
+        margin: 10px;
+    }
+    a:hover{
+        color: #f5f5f5;
+        background-color: black;
+        border-radius: 10px;
+    }
+</style>

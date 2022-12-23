@@ -1,0 +1,13 @@
+
+<div>
+    {% for contact in contacts %}
+    <div>
+        <a href="{{ url_for('contacts.delete_contact', rut=contact.rut) }}">Delete</a>
+        <a href="{{ url_for('contacts.update_contact', rut=contact.rut) }}">Update</a>
+        <h5>{{contact.nombre}}</h5>
+        <p>{{contact.rut}}</p>
+        <p>{{contact.apellido}}</p>
+        <p>{{contact.correo}}</p>
+    </div>
+    {% endfor %}
+</div>
